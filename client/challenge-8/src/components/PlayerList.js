@@ -1,8 +1,8 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 
 function PlayerList() {
-  // const [players, settPlayer] = useState([]);
+  const [players, setPlayer] = useState([]);
 
   useEffect(() => {
     getPlayers();
@@ -10,12 +10,13 @@ function PlayerList() {
 
   const getPlayers = async () => {
     const response = await axios.get("http://localhost:5000/api/players");
-    console.log(response.data);
+    // console.log(response.data.message);
+    setPlayer(response.data.message);
   };
 
   return (
     <div>
-      <table className="table">
+      <table className="table mt-3">
         <thead>
           <tr>
             <th>No</th>
@@ -27,17 +28,21 @@ function PlayerList() {
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>1</td>
-            <td>Cipto</td>
-            <td>cipto@gmail.com</td>
-            <td>100</td>
-            <td>2</td>
-            <td>
-              <button className="btn btn-primary">Edit</button>
-              <button className="btn btn-danger">Delete</button>
-            </td>
-          </tr>
+          {players.map((player, index) => {
+            return (
+              <tr key={player.id}>
+                <td>{index + 1}</td>
+                <td>{player.username}</td>
+                <td>{player.email}</td>
+                <td>{player.experience}</td>
+                <td>{player.lvl}</td>
+                <td>
+                  <button className="btn btn-primary">Edit</button>
+                  <button className="btn btn-danger">Delete</button>
+                </td>
+              </tr>
+            );
+          })}
         </tbody>
       </table>
     </div>
