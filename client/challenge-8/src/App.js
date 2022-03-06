@@ -1,12 +1,14 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import AddPlayer from "./components/AddPlayer";
 import EditPlayer from "./components/EditPlayer";
+import Navbar from "./components/Navbar";
 import PlayerList from "./components/PlayerList";
 
 function App() {
   return (
     <BrowserRouter>
       <div className="container">
+        <Navbar />
         <div className="row justify-content-center">
           <div className="col">
             <Routes>
