@@ -11,8 +11,13 @@ function PlayerList() {
 
   const getPlayers = async () => {
     const response = await axios.get("http://localhost:5000/api/players");
-    // console.log(response.data.message);
+    console.log(response.data.message);
     setPlayer(response.data.message);
+  };
+
+  const deletePlayer = async (id) => {
+    await axios.delete(`http://localhost:5000/api/players/${id}`);
+    getPlayers();
   };
 
   return (
@@ -56,7 +61,12 @@ function PlayerList() {
                   <Link to={`/edit/player.id`} className="btn btn-primary">
                     Edit
                   </Link>
-                  <button className="btn btn-danger">Delete</button>
+                  <button
+                    onClick={() => deletePlayer(player.id)}
+                    className="btn btn-danger"
+                  >
+                    Delete
+                  </button>
                 </td>
               </tr>
             );
