@@ -3,6 +3,7 @@ import AddPlayer from "./components/AddPlayer";
 import EditPlayer from "./components/EditPlayer";
 import Navbar from "./components/Navbar";
 import PlayerList from "./components/PlayerList";
+import SubmitPlayer from "./components/SubmitPlayer";
 
 function App() {
   return (
@@ -12,9 +13,10 @@ function App() {
         <div className="row justify-content-center">
           <div className="col">
             <Routes>
-              <Route path="/" element={<PlayerList />}></Route>
-              <Route path="add" element={<AddPlayer />}></Route>
-              <Route path="edit" element={<EditPlayer />}></Route>
+              <Route path="/" element={<SubmitPlayer />}></Route>
+              <Route path="/api/players" element={<PlayerList />}></Route>
+              <Route path="/add" element={<AddPlayer />}></Route>
+              <Route path="/edit/:1" element={<EditPlayer />}></Route>
             </Routes>
           </div>
         </div>

@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 function PlayerList() {
   const [players, setPlayer] = useState([]);
@@ -16,6 +17,21 @@ function PlayerList() {
 
   return (
     <div>
+      <div className="mt-3 col align-self-end">
+        <form className="form-inline my-2 my-lg-0 mt-3">
+          <label className="text-strong mr-2">Search Player :</label>
+          <input
+            className="form-control mr-sm-2"
+            type="search"
+            placeholder="Search"
+            aria-label="Search"
+          />
+          <button className="btn btn-success my-2 my-sm-0" type="submit">
+            Search
+          </button>
+        </form>
+      </div>
+
       <table className="table mt-3">
         <thead>
           <tr>
@@ -37,7 +53,9 @@ function PlayerList() {
                 <td>{player.experience}</td>
                 <td>{player.lvl}</td>
                 <td>
-                  <button className="btn btn-primary">Edit</button>
+                  <Link to={`/edit/player.id`} className="btn btn-primary">
+                    Edit
+                  </Link>
                   <button className="btn btn-danger">Delete</button>
                 </td>
               </tr>
