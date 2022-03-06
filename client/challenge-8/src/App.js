@@ -1,5 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import AddPlayer from "./components/AddPlayer";
+import EditPlayer from "./components/EditPlayer";
 import PlayerList from "./components/PlayerList";
 
 function App() {
@@ -11,6 +12,7 @@ function App() {
             <Routes>
               <Route path="/" element={<PlayerList />}></Route>
               <Route path="add" element={<AddPlayer />}></Route>
+              <Route path="edit" element={<EditPlayer />}></Route>
             </Routes>
           </div>
         </div>

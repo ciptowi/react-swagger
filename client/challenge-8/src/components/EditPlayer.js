@@ -1,11 +1,11 @@
 import React from "react";
 
-function AddPlayer() {
+const EditPlayer = () => {
   return (
     <>
       <div className="card mt-5 col-md-6 mx-auto">
         <div className="card-header text-center">
-          <h5 className="card-title">Form Create a New Player</h5>
+          <h5 className="card-title">Form Edit Player</h5>
         </div>
         <div className="card-body">
           <form>
@@ -33,9 +33,25 @@ function AddPlayer() {
                 placeholder="Enter password"
               />
             </div>
+            <div className="form-group">
+              <label>Experience</label>
+              <input
+                className="form-control"
+                type="number"
+                placeholder="Enter Experience"
+              />
+            </div>
+            <div className="form-group">
+              <label>Level</label>
+              <input
+                className="form-control"
+                type="number"
+                placeholder="Enter Level"
+              />
+            </div>
             <div className="text-center">
               <button type="submt" className="btn btn-success">
-                Create
+                Save
               </button>
             </div>
           </form>
@@ -43,6 +59,6 @@ function AddPlayer() {
       </div>
     </>
   );
-}
+};
 
-export default AddPlayer;
+export default EditPlayer;
