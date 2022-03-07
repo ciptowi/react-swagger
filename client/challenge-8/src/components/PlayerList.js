@@ -23,18 +23,10 @@ function PlayerList() {
   return (
     <div>
       <div className="mt-3 col align-self-end">
-        <form className="form-inline my-2 my-lg-0 mt-3">
-          <label className="text-strong mr-2">Search Player :</label>
-          <input
-            className="form-control mr-sm-2"
-            type="search"
-            placeholder="Search"
-            aria-label="Search"
-          />
-          <button className="btn btn-success my-2 my-sm-0" type="submit">
-            Search
-          </button>
-        </form>
+        <h6>
+          This data is fetched from the API, if the data is not shown try to run
+          it and check the API
+        </h6>
       </div>
 
       <table className="table mt-3">
@@ -73,6 +65,7 @@ function PlayerList() {
           })}
         </tbody>
       </table>
+      {players.length === 0 && <span>No records found to display!</span>}
     </div>
   );
 }

@@ -5,12 +5,13 @@ import { Link } from "react-router-dom";
 function PlayerJSON() {
   return (
     <div>
-      <div className="text-center">
-        <Link className="btn btn-outline-dark mt-3" to="/submit">
-          Add a New Player
+      <div className="form-inline mt-3">
+        <h5>To add player data please</h5>
+        <Link className="btn btn-primary font-weight-bold" to="/submit">
+          add player
         </Link>
       </div>
-      <table className="table mt-3">
+      <table className="table">
         <thead>
           <tr className="bg-dark text-light">
             <th>No</th>

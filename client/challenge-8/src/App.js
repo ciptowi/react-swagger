@@ -4,6 +4,7 @@ import EditPlayer from "./components/EditPlayer";
 import Navbar from "./components/navbar";
 import PlayerJSON from "./components/PlayerJSON";
 import PlayerList from "./components/PlayerList";
+import SearchPage from "./components/SearchPage";
 import SubmitPlayer from "./components/SubmitPlayer";
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
               <Route path="/api/players" element={<PlayerList />}></Route>
               <Route path="/add" element={<AddPlayer />}></Route>
               <Route path="/edit/:1" element={<EditPlayer />}></Route>
+              <Route path="/search" element={<SearchPage />}></Route>
             </Routes>
           </div>
         </div>

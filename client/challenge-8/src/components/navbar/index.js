@@ -27,6 +27,11 @@ const Navbar = () => {
                   Add JSON Player
                 </Link>
               </li>
+              <li className="nav-item">
+                <Link to="/search" className="nav-link text-light">
+                  Search
+                </Link>
+              </li>
             </ul>
           </div>
         </nav>
