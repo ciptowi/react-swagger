@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import players from "../data/players.json";
+import players from "./data/players.json";
 
 const SubmitPlayer = () => {
   const [username, setUsername] = useState("");

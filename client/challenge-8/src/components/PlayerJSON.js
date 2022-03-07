@@ -1,5 +1,5 @@
 import React from "react";
-import players from "../data/players.json";
+import players from "./data/players.json";
 import { Link } from "react-router-dom";
 
 function PlayerJSON() {
