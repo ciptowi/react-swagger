@@ -58,7 +58,7 @@ function PlayerList() {
                 <td>{player.experience}</td>
                 <td>{player.lvl}</td>
                 <td>
-                  <Link to={`/edit/player.id`} className="btn btn-primary">
+                  <Link to={`/edit/${player.id}`} className="btn btn-primary">
                     Edit
                   </Link>
                   <button

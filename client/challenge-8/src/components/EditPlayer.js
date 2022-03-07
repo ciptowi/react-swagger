@@ -7,7 +7,7 @@ const EditPlayer = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
-  const id = useParams();
+  const { id } = useParams();
 
   const editPlayer = async (e) => {
     e.preventDefault();
@@ -21,7 +21,7 @@ const EditPlayer = () => {
 
   useEffect(() => {
     getPlayerById();
-  });
+  }, []);
 
   const getPlayerById = async () => {
     const response = await axios.get(`http://localhost:5000/api/players/${id}`);
