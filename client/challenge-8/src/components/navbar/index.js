@@ -13,13 +13,18 @@ const Navbar = () => {
           <div className="collapse navbar-collapse">
             <ul className="navbar-nav mr-auto">
               <li className="nav-item">
-                <Link to="/add" className="nav-link text-light">
-                  Add Player
+                <Link to="/api/players" className="nav-link text-light">
+                  API Players
                 </Link>
               </li>
               <li className="nav-item">
-                <Link to="/api/players" className="nav-link text-light">
-                  Players API
+                <Link to="/add" className="nav-link text-light">
+                  Add API Player
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link to="/submit" className="nav-link text-light">
+                  Add JSON Player
                 </Link>
               </li>
             </ul>
