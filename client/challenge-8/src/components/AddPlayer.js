@@ -60,6 +60,7 @@ function AddPlayer() {
               <button type="submt" className="btn btn-success">
                 Create
               </button>
+              <h6 className="mt-3">Submit data to API</h6>
             </div>
           </form>
         </div>

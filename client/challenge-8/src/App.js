@@ -1,7 +1,8 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import AddPlayer from "./components/AddPlayer";
 import EditPlayer from "./components/EditPlayer";
-import Navbar from "./components/Navbar";
+import Navbar from "./components/navbar";
+import PlayerJSON from "./components/PlayerJSON";
 import PlayerList from "./components/PlayerList";
 import SubmitPlayer from "./components/SubmitPlayer";
 
@@ -13,7 +14,8 @@ function App() {
         <div className="row justify-content-center">
           <div className="col">
             <Routes>
-              <Route path="/" element={<SubmitPlayer />}></Route>
+              <Route path="/" element={<PlayerJSON />}></Route>
+              <Route path="/submit" element={<SubmitPlayer />}></Route>
               <Route path="/api/players" element={<PlayerList />}></Route>
               <Route path="/add" element={<AddPlayer />}></Route>
               <Route path="/edit/:1" element={<EditPlayer />}></Route>

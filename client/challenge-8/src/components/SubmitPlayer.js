@@ -1,19 +1,22 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import players from "../data/players.json";
 
 const SubmitPlayer = () => {
-  const players = [];
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [experience, setExperience] = useState("");
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    players.push({
+    let newPlayer = {
       username: username,
       email: email,
       experience: experience,
-    });
-    console.log(players);
+    };
+    players.push(newPlayer);
+    navigate("/");
   };
 
   return (
@@ -60,35 +63,11 @@ const SubmitPlayer = () => {
                   <button type="submt" className="btn btn-success">
                     Create
                   </button>
+                  <h6 className="mt-3">Submit data to JSON</h6>
                 </div>
               </form>
             </div>
           </div>
-        </div>
-        <div className="col-6">
-          <table className="table mt-3">
-            <thead>
-              <tr>
-                <th>No</th>
-                <th>Username</th>
-                <th>Email</th>
-                <th>Experience</th>
-              </tr>
-            </thead>
-            <tbody>
-              {players.map((player, index) => {
-                return (
-                  <tr key={index}>
-                    <td>{index + 1}</td>
-                    <td>{player.username}</td>
-                    <td>{player.email}</td>
-                    <td>{player.experience}</td>
-                  </tr>
-                );
-              })}
-            </tbody>
-          </table>
-          -
         </div>
       </div>
     </div>
